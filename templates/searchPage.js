@@ -103,8 +103,8 @@ function assignSingleRowSearchPage(inputSingles) {
         content += `
         <div id="genre-page-single-row-0" class="genre-page-single-list-row d-flex" style="height:0px;"></div>
         `;
-    } else if (inputSingles.length > 6) {
-        let numberOfRowSingle = Math.ceil(inputSingles.length / 6);
+    } else if (inputSingles.length > 5) {
+        let numberOfRowSingle = Math.ceil(inputSingles.length / 5);
         for (let i = 0; i < numberOfRowSingle; i++) {
             content += `
             <div id="genre-page-single-row-${i}" class="genre-page-single-list-row d-flex"></div>
@@ -193,39 +193,39 @@ function assignSearchPageArtistCard(inputArtists) {
 
 function assignSearchPageSingleCard(inputSingles) {
     if (inputSingles.length !== 0) {
-        let numberOfRow6Singles = Math.floor(inputSingles.length / 6);
+        let numberOfRow6Singles = Math.floor(inputSingles.length / 5);
         for (let i = 0; i < numberOfRow6Singles; i++) {
             let content = ``;
-            for (let j = 1; j < 7; j++) {
-                if (j < 6) {
+            for (let j = 1; j < 6; j++) {
+                if (j < 5) {
                     content += `
                             <div class="genre-page-single-card">
-                                <div class="genre-page-single-card-img d-flex justify-content-center" onclick="playFirstTime('${inputSingles[i*6+j-1].id}')">
-                                    <img class="circle-img" src="${inputSingles[i*6+j-1].cover}" alt="">
+                                <div class="genre-page-single-card-img d-flex justify-content-center" onclick="playFirstTime('${inputSingles[i*5+j-1].id}')">
+                                    <img class="circle-img" src="${inputSingles[i*5+j-1].cover}" alt="">
                                 </div>
                                 <div class="genre-page-single-card-detail">
-                                    <div class="genre-page-single-card-title d-flex align-items-end" onclick="playFirstTime('${inputSingles[i*6+j-1].id}')">
-                                        <span>${inputSingles[i*6+j-1].name}</span>
+                                    <div class="genre-page-single-card-title d-flex align-items-end" onclick="playFirstTime('${inputSingles[i*5+j-1].id}')">
+                                        <span>${inputSingles[i*5+j-1].name}</span>
                                     </div>
-                                    <div class="genre-page-single-card-artist d-flex align-items-start" onclick="displayArtistDetailPage(getArtistById('${inputSingles[i*6+j-1].artist}'),getAlbumListByArtistId('${inputSingles[i*6+j-1].artist}'),getSingleListByArtistId('${inputSingles[i*6+j-1].artist}'))">
-                                        <span>${getArtistById(inputSingles[i*6+j-1].artist)}</span>
+                                    <div class="genre-page-single-card-artist d-flex align-items-start" onclick="displayArtistDetailPage(getArtistById('${inputSingles[i*5+j-1].artist}'),getAlbumListByArtistId('${inputSingles[i*5+j-1].artist}'),getSingleListByArtistId('${inputSingles[i*5+j-1].artist}'))">
+                                        <span>${getArtistById(inputSingles[i*5+j-1].artist)}</span>
                                     </div>
                                 </div>
                             </div>
-                            <div class="" style="width: 2%; height: 100%;"></div>
+                            <div class="" style="width: 6.25%; height: 100%;"></div>
                     `;
                 } else {
                     content += `
                             <div class="genre-page-single-card">
-                                <div class="genre-page-single-card-img d-flex justify-content-center" onclick="playFirstTime('${inputSingles[i*6+j-1].id}')">
-                                    <img class="circle-img" src="${inputSingles[i*6+j-1].cover}" alt="">
+                                <div class="genre-page-single-card-img d-flex justify-content-center" onclick="playFirstTime('${inputSingles[i*5+j-1].id}')">
+                                    <img class="circle-img" src="${inputSingles[i*5+j-1].cover}" alt="">
                                 </div>
                                 <div class="genre-page-single-card-detail">
-                                    <div class="genre-page-single-card-title d-flex align-items-end" onclick="playFirstTime('${inputSingles[i*6+j-1].id}')">
-                                        <span>${inputSingles[i*6+j-1].name}</span>
+                                    <div class="genre-page-single-card-title d-flex align-items-end" onclick="playFirstTime('${inputSingles[i*5+j-1].id}')">
+                                        <span>${inputSingles[i*5+j-1].name}</span>
                                     </div>
-                                    <div class="genre-page-single-card-artist d-flex align-items-start" onclick="displayArtistDetailPage(getArtistById('${inputSingles[i*6+j-1].artist}'),getAlbumListByArtistId('${inputSingles[i*6+j-1].artist}'),getSingleListByArtistId('${inputSingles[i*6+j-1].artist}'))">
-                                        <span>${getArtistById(inputSingles[i*6+j-1].artist)}</span>
+                                    <div class="genre-page-single-card-artist d-flex align-items-start" onclick="displayArtistDetailPage(getArtistById('${inputSingles[i*5+j-1].artist}'),getAlbumListByArtistId('${inputSingles[i*5+j-1].artist}'),getSingleListByArtistId('${inputSingles[i*5+j-1].artist}'))">
+                                        <span>${getArtistById(inputSingles[i*5+j-1].artist)}</span>
                                     </div>
                                 </div>
                             </div>
@@ -234,25 +234,25 @@ function assignSearchPageSingleCard(inputSingles) {
             }
             document.getElementById(`genre-page-single-row-${i}`).innerHTML = content;
         }
-        let du = inputSingles.length - (numberOfRow6Singles * 6);
+        let du = inputSingles.length - (numberOfRow6Singles * 5);
         if (du !== 0) {
             let content1 = ``;
             for (let i = 0; i < du; i++) {
                 content1 += `
                             <div class="genre-page-single-card">
-                                <div class="genre-page-single-card-img d-flex justify-content-center" onclick="playFirstTime('${inputSingles[numberOfRow6Singles*6+i].id}')">
-                                    <img class="circle-img" src="${inputSingles[numberOfRow6Singles*6+i].cover}" alt="">
+                                <div class="genre-page-single-card-img d-flex justify-content-center" onclick="playFirstTime('${inputSingles[numberOfRow6Singles*5+i].id}')">
+                                    <img class="circle-img" src="${inputSingles[numberOfRow6Singles*5+i].cover}" alt="">
                                 </div>
                                 <div class="genre-page-single-card-detail">
-                                    <div class="genre-page-single-card-title d-flex align-items-end" onclick="playFirstTime('${inputSingles[numberOfRow6Singles*6+i].id}')">
-                                        <span>${inputSingles[numberOfRow6Singles*6+i].name}</span>
+                                    <div class="genre-page-single-card-title d-flex align-items-end" onclick="playFirstTime('${inputSingles[numberOfRow6Singles*5+i].id}')">
+                                        <span>${inputSingles[numberOfRow6Singles*5+i].name}</span>
                                     </div>
-                                    <div class="genre-page-single-card-artist d-flex align-items-start" onclick="displayArtistDetailPage(getArtistById('${inputSingles[numberOfRow6Singles*6+i].artist}'),getAlbumListByArtistId('${inputSingles[numberOfRow6Singles*6+i].artist}'),getSingleListByArtistId('${inputSingles[numberOfRow6Singles*6+i].artist}'))">
-                                        <span>${getArtistById(inputSingles[numberOfRow6Singles*6+i].artist)}</span>
+                                    <div class="genre-page-single-card-artist d-flex align-items-start" onclick="displayArtistDetailPage(getArtistById('${inputSingles[numberOfRow6Singles*5+i].artist}'),getAlbumListByArtistId('${inputSingles[numberOfRow6Singles*5+i].artist}'),getSingleListByArtistId('${inputSingles[numberOfRow6Singles*5+i].artist}'))">
+                                        <span>${getArtistById(inputSingles[numberOfRow6Singles*5+i].artist)}</span>
                                     </div>
                                 </div>
                             </div>
-                            <div class="" style="width: 2%; height: 100%;"></div>                     
+                            <div class="" style="width: 6.25%; height: 100%;"></div>                     
             `;
             }
             document.getElementById(`genre-page-single-row-${numberOfRow6Singles}`).innerHTML = content1;

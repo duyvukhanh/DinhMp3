@@ -392,7 +392,7 @@ function searchProcess() {
             singlesSearched.push(tracks[i]);
         }
     }
-    displaySearchPage("Result", albumsSearched, artistsSearched, singlesSearched)
+    displaySearchPage(`Result for "${search}"`, albumsSearched, artistsSearched, singlesSearched)
 }
 
 
