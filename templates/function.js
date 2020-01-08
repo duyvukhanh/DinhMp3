@@ -328,6 +328,31 @@ $('#vol-control').click(function (event) {
 });
 
 
+function volToUnactive() {
+    let currentVol = ($('#vol-control').val() / 100);
+    localStorage.setItem("currentVol",JSON.stringify(currentVol));
+    document.getElementById("volume-icon").className = "fas fa-volume-mute";
+    song.volume = 0;
+    vol = ($('#vol-control').val() / 100);
+    let style = `background-image: -webkit-gradient(linear, 0% 0%, 100% 0%, color-stop(0 , crimson), color-stop(0 , #0A1A2A));border-radius : 20px;`;
+    document.getElementById("vol-control").removeAttribute("style");
+    document.getElementById("vol-control").setAttribute("style", style);
+    document.getElementById("volume-icon").removeAttribute("onclick");
+    document.getElementById("volume-icon").setAttribute("onclick","volToActive();")
+}
+
+function volToActive() {
+    let currentVol = JSON.parse(localStorage.getItem("currentVol"));
+    document.getElementById("volume-icon").className = "fas fa-volume-up";
+    song.volume = currentVol;
+    let style = `background-image: -webkit-gradient(linear, 0% 0%, 100% 0%, color-stop(${currentVol} , crimson), color-stop(${currentVol} , #0A1A2A));border-radius : 20px;`;
+    document.getElementById("vol-control").removeAttribute("style");
+    document.getElementById("vol-control").setAttribute("style", style);
+    document.getElementById("volume-icon").removeAttribute("onclick");
+    document.getElementById("volume-icon").setAttribute("onclick","volToUnactive();")
+}
+
+
 function timeConvert(time) {
     time = Math.floor(time);
     let min = Math.floor(time / 60);

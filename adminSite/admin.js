@@ -21,7 +21,7 @@
 // let tracks = JSON.parse(localStorage.getItem("trackListStorage"));
 // let albums = JSON.parse(localStorage.getItem("albumListStorage"));
 // let artists = JSON.parse(localStorage.getItem("artistListStorage"));
-let genreList = ["pop","rock","rap","country"]
+let genreList = ["pop", "rock", "rap", "country"]
 
 // console.log(albums)
 
@@ -55,6 +55,52 @@ function displayAdminIndex() {
     document.getElementById("nav-item-2").className = "nav-item mx-2"
     document.getElementById("nav-item-3").className = "nav-item mx-2"
     document.getElementById("nav-item-4").className = "nav-item mx-2"
+
+    document.getElementById("dashboard").innerHTML = `<div class="row">
+    <div class="col-md-4">
+        <div class="dbox dbox--color-1">
+            <!-- <div class="dbox__icon">
+                <i class="glyphicon glyphicon-cloud"></i>
+            </div> -->
+            <div class="dbox__body">
+                <span class="dbox__count" id="albums-count"></span>
+                <span class="dbox__title">Albums</span>
+            </div>
+            
+            <!-- <div class="dbox__action">
+                <button class="dbox__action__btn">More Info</button>
+            </div>				 -->
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="dbox dbox--color-2">
+            <!-- <div class="dbox__icon">
+                <i class="glyphicon glyphicon-download"></i>
+            </div> -->
+            <div class="dbox__body">
+                <span class="dbox__count" id="singles-count"></span>
+                <span class="dbox__title">Singles</span>
+            </div>
+            
+            <!-- <div class="dbox__action">
+                <button class="dbox__action__btn">More Info</button>
+            </div>				 -->
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="dbox dbox--color-3">
+            <!-- <div class="dbox__icon">
+                <i class="glyphicon glyphicon-heart"></i>
+            </div> -->
+            <div class="dbox__body">
+                <span class="dbox__count" id="artists-count"></span>
+                <span class="dbox__title">Artist</span>
+            </div>
+            
+                        
+        </div>
+    </div>
+</div>`;
     document.getElementById("albums-count").innerHTML = `${albums.length}`
     document.getElementById("singles-count").innerHTML = `${tracks.length}`
     document.getElementById("artists-count").innerHTML = `${artists.length}`

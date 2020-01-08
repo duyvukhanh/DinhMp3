@@ -1,4 +1,6 @@
 function displaySinglesAdmin() {
+    document.getElementById("dashboard").innerHTML = '';
+
     tracks = JSON.parse(localStorage.getItem("trackListStorage"));
     albums = JSON.parse(localStorage.getItem("albumListStorage"));
     artists = JSON.parse(localStorage.getItem("artistListStorage"));

@@ -1,4 +1,6 @@
 function displayArtistsAdmin() {
+    document.getElementById("dashboard").innerHTML = '';
+
     let tracks = JSON.parse(localStorage.getItem("trackListStorage"));
     let albums = JSON.parse(localStorage.getItem("albumListStorage"));
     let artists = JSON.parse(localStorage.getItem("artistListStorage"));

@@ -10,7 +10,7 @@ function displayGenrePage(inputGenre, inputAlbums, inputArtists, inputSingles) {
 
             <div class="genre-page-single-sector">
                 <div class="genre-page-single-sector-title d-flex justify-content-between">
-                    <span class="genre-page-single">Singles</span>
+                    <span class="genre-page-single">Singles (${inputSingles.length})</span>
                 </div>
                 <div id="genre-page-single-box" class="genre-page-single-list">
                     
@@ -18,7 +18,7 @@ function displayGenrePage(inputGenre, inputAlbums, inputArtists, inputSingles) {
             </div>
             <div class="genre-page-artist-sector">
                 <div class="genre-page-artist-sector-title d-flex justify-content-between">
-                    <span class="genre-page-artist">Artists</span>
+                    <span class="genre-page-artist">Artists (${inputArtists.length})</span>
                 </div>
                 <div id="genre-page-artist-box" class="genre-page-artist-list">
                     
@@ -26,7 +26,7 @@ function displayGenrePage(inputGenre, inputAlbums, inputArtists, inputSingles) {
             </div>
             <div class="genre-page-album-sector">
                 <div class="genre-page-album-sector-title d-flex justify-content-between">
-                    <span class="genre-page-album">Albums</span>
+                    <span class="genre-page-album">Albums (${inputAlbums.length})</span>
                 </div>
                 <div id="genre-page-album-box" class="genre-page-album-list">
                     
