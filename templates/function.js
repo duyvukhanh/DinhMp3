@@ -370,7 +370,7 @@ function stringProcess(input) {
 
 function searchProcess() {
     let search = document.getElementsByClassName("search-bar-input")[0].value;
-    console.log(search)
+    // console.log(search)
     let albumsSearched = [];
     let artistsSearched = [];
     let singlesSearched = [];
@@ -392,7 +392,7 @@ function searchProcess() {
             singlesSearched.push(tracks[i]);
         }
     }
-    displaySearchPage(`Result for "${search}"`, albumsSearched, artistsSearched, singlesSearched)
+    displaySearchPage(`Results for "${search}"`, albumsSearched, artistsSearched, singlesSearched)
 }
 
 

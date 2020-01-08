@@ -10,7 +10,7 @@ function displaySearchPage(inputGenre, inputAlbums, inputArtists, inputSingles) 
 
             <div class="genre-page-single-sector">
                 <div class="genre-page-single-sector-title d-flex justify-content-between">
-                    <span class="genre-page-single">Singles</span>
+                    <span class="genre-page-single">Singles (${inputSingles.length})</span>
                   
                 </div>
                 <div id="genre-page-single-box" class="genre-page-single-list">
@@ -19,7 +19,7 @@ function displaySearchPage(inputGenre, inputAlbums, inputArtists, inputSingles) 
             </div>
             <div class="genre-page-artist-sector">
                 <div class="genre-page-artist-sector-title d-flex justify-content-between">
-                    <span class="genre-page-artist">Artists</span>
+                    <span class="genre-page-artist">Artists (${inputArtists.length})</span>
                     
                 </div>
                 <div id="genre-page-artist-box" class="genre-page-artist-list">
@@ -28,7 +28,7 @@ function displaySearchPage(inputGenre, inputAlbums, inputArtists, inputSingles) 
             </div>
             <div class="genre-page-album-sector">
                 <div class="genre-page-album-sector-title d-flex justify-content-between">
-                    <span class="genre-page-album">Albums</span>
+                    <span class="genre-page-album">Albums (${inputAlbums.length})</span>
                     
                 </div>
                 <div id="genre-page-album-box" class="genre-page-album-list">
@@ -54,8 +54,8 @@ function displaySearchPage(inputGenre, inputAlbums, inputArtists, inputSingles) 
 
 function assignArtistRowSearchPage(inputArtists) {
     content = ``;
-    console.log(inputArtists.length)
-    console.log(Math.ceil(inputArtists.length / 6))
+    // console.log(inputArtists.length)
+    // console.log(Math.ceil(inputArtists.length / 6))
     if (inputArtists.length === 0){
         content = `
             <div id="genre-page-artist-row-0" class="genre-page-artist-list-row d-flex" style="height:0px;"></div>
@@ -125,7 +125,7 @@ function assignSingleRowSearchPage(inputSingles) {
 function assignSearchPageArtistCard(inputArtists) {
     if (inputArtists.len !== 0) {
         let numberOfRow6Artists = Math.floor(inputArtists.length / 6);
-        console.log(numberOfRow6Artists)
+        // console.log(numberOfRow6Artists)
 
         for (let i = 0; i < numberOfRow6Artists; i++) {
             let content = ``;
